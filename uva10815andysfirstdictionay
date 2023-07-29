@@ -1,0 +1,32 @@
+
+#include<bits/stdc++.h>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string s;
+    set<string> st;
+    while(getline(cin,s)){
+string ans="";
+
+for(int i=0;i<s.size();i++){
+    
+    if(('a'<=s[i] && s[i]<='z') || ('A'<=s[i] && s[i]<='Z')){
+        ans+=tolower(s[i]);
+    }
+    else{
+        if(ans.size()>0)
+        st.insert(ans);
+        ans="";
+    }
+}
+if(ans.size()>0) st.insert(ans);
+}
+for(auto u:st){
+    cout<<u<<endl;
+}
+
+    return 0;
+}
